@@ -16,6 +16,11 @@ const routes = [
     component: () => import('../views/About.vue')
   },
   {
+    path: '/useMethods',
+    name: 'UseMethods',
+    component: () => import('../views/UseMethods.vue')
+  },
+  {
     path: '/cart',
     name: '購物車',
     component: () => import('../views/Cart.vue'),
@@ -29,8 +34,17 @@ const routes = [
         component: () => import('../components/componentB.vue')
       },
       {
-        path: 'products/:id',
+        path: 'products',
         component: () => import('../views/Products.vue')
+      },
+      {
+        path: 'productProps/:id',
+        component: () => import('../views/ProductProps.vue'),
+        props: (route) => {
+          return {
+            id: route.params.id
+          }
+        }
       },
       {
         path: 'multi',
@@ -53,6 +67,18 @@ const routes = [
         ]
       }
     ]
+  },
+  // 404頁面
+  {
+    path: '/:pathMatch(.*)*',
+    component: () => import('../views/NotFound.vue')
+  },
+  // 重新導向
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: {
+      name: 'Home'
+    }
   }
 ]
 

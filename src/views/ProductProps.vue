@@ -1,6 +1,6 @@
 <template>
   <div>
-    123
+    456
   </div>
 </template>
 
@@ -8,10 +8,12 @@
 import axios from 'axios'
 
 export default {
+  props: ['id'],
   created () {
     // console.log(this.$route.params.id)
+    const seed = this.id
     axios
-      .get('https://randomuser.me/api/')
+      .get(`https://randomuser.me/api/?seed=${seed}`)
       .then((res) => {
         console.log(res)
       })

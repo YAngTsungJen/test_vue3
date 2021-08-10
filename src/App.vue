@@ -15,6 +15,9 @@
               <router-link class="nav-link" to="/about">About</router-link>
             </li>
             <li class="nav-item">
+              <router-link class="nav-link" to="/useMethods">useMethods</router-link>
+            </li>
+            <li class="nav-item">
               <router-link class="nav-link" :to=" {name:'購物車'} ">購物車</router-link>
             </li>
           </ul>
@@ -22,7 +25,7 @@
       </div>
     </nav>
     <div class="container">
-      {{ name }}
+      <!-- {{ name }} -->
       <router-view/>
     </div>
   </div>
