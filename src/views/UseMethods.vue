@@ -35,16 +35,16 @@ export default {
       this.$router.replace({
         name: 'About'
       })
-    },
-    addRoute () {
-      this.$router.addRoute(
-        {
-          path: '/newuseMethods',
-          name: 'NewUseMethods',
-          component: () => import('../views/UseMethods.vue')
-        }
-      )
     }
+    // addRoute () {
+    //   this.$router.addRoute(
+    //     {
+    //       path: '/newuseMethods',
+    //       name: 'NewUseMethods',
+    //       component: () => import('../views/UseMethods.vue')
+    //     }
+    //   )
+    // }
   }
 }
 </script>
